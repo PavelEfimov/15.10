@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 
 import List from './List';
-import Form from './Form';
 
-import {getList} from '../sources/list';
+import {getList} from '../../sources/list';
 
 class App extends Component {
     constructor(props) {
@@ -24,7 +23,6 @@ class App extends Component {
     }
 
     componentDidMount() {
-        // console.log('did mount');
         getList({count: this.state.count})
             .then(({data}) => this.setState({list: data}));
     }
@@ -34,27 +32,19 @@ class App extends Component {
             getList({count: this.state.count})
                 .then(({data}) => this.setState({list: data}));
         }
-        // console.log('did update');
-        // console.log('did update prevState: ', prevState);
-        // console.log('did update ', this.state);
-
     }
 
     render() {
-        // const { onInputChange } = this;
-
-        // const {list} = this.state;
-
-        // console.log('count: ', this.state.count);
+        const { onInputChange } = this;
+        const {list} = this.state;
 
         return (
             <div>
-                {/*<input type="number" placeholder="count here" onChange={onInputChange} />*/}
-                {/*<List list={list}/>*/}
-                <Form />
+                <input type="number" onChange={onInputChange} />
+                <List list={list}/>
             </div>
         );
     }
 }
 
-export default App;
+export { App };
