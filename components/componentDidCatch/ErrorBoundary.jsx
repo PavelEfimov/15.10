@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { logErrorToFile } from '../../utils';
+
 class ErrorBoundary extends Component {
     constructor(props) {
         super(props);

@@ -1,7 +1,6 @@
 const {join} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
     entry: join(__dirname, 'index.jsx'),
     output: {

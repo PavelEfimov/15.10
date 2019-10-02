@@ -3,5 +3,6 @@ const getData = (data, count) => {
 };
 
 module.exports = {
-    getData
+    getData,
+    logErrorToFile
 };
